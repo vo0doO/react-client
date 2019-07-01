@@ -11,7 +11,9 @@ import Spreader from './common/Spreader';
 import {Redirect, Route, Switch} from 'react-router';
 import {AuthPage} from "./pages/AuthPage";
 import {UsersListPage} from "./pages/UsersListPage";
+import {BillsListPage} from "./pages/BillsListPage";
 import {AuthLayout} from "./common/AuthLayout";
+import {ApiPage} from "./pages/ApiPage";
 
 class App extends Component {
     render() {
@@ -30,15 +32,29 @@ class App extends Component {
                                                 </AuthLayout>
                                             )
                                         }}/>
-                                        <Route exact path='/users' component={() => {
+                                        <Route exact path='/api' component={() => {
+                                            return (
+                                                <AuthLayout>
+                                                    <ApiPage/>
+                                                </AuthLayout>
+                                            );
+                                        }}/>
+                                        <Route exact path='/api/users' component={() => {
                                             return (
                                                 <AuthLayout>
                                                     <UsersListPage/>
                                                 </AuthLayout>
                                             );
                                         }}/>
+                                        <Route exact path='/api/bills' component={() => {
+                                            return (
+                                                <AuthLayout>
+                                                    <BillsListPage/>
+                                                </AuthLayout>
+                                            );
+                                        }}/>
                                         <Route path='/' component={() => {
-                                            return <Redirect to='/users'/>
+                                            return <Redirect to='/api'/>
                                         }}/>
                                     </Switch>
                                 </Spreader>

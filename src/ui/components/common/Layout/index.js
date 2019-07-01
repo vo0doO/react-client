@@ -12,6 +12,9 @@ injectGlobal(reset, fonts, `
     font-family: 'Museo Sans';
     font-weight: 500;
     overflow-x: hidden;
+    table: {
+        border: 3px;
+    };
   }
   
   a {
@@ -23,10 +26,9 @@ injectGlobal(reset, fonts, `
   * {
     outline: 0
   }
-
   
   hr {
-    border: 0;
+    border: 3;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
